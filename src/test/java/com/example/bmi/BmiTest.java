@@ -11,6 +11,6 @@ public class BmiTest {
 
     @Test
     public void testBMI() {
-        assertEquals( "0.001957168128269788",String.valueOf(bmi.bmicalculator(52, 163)));
+        assertEquals( "19.57168128269788",String.valueOf(bmi.bmicalculator(52, 163)));
     }
 }

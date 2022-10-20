@@ -10,7 +10,7 @@ public class Bmi {
 
     @Cacheable
     public double bmicalculator(double weight, double height) {
-        return weight / (height * height);
+        return weight / ( (height/100) * (height/100));
     }
 
 }

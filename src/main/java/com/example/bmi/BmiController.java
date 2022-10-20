@@ -1,9 +1,8 @@
 package com.example.bmi;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * BMICalculatorController Spring Application. */
@@ -14,19 +13,19 @@ public class BmiController {
     private Bmi bmi;
 
 
-    @RequestMapping("/bmi")
-    String bim_result (@RequestParam("weight") double weight,
-                @RequestParam("height") double height) {
+    @RequestMapping(value = "/api/bmi", method = RequestMethod.GET)
+    @ResponseStatus(value = HttpStatus.OK)
+    public String getBMI_result(@RequestParam("weight") double weight,
+                         @RequestParam("height") double height) {
 
-//        double bmi_level = 0.0;
-//        bmi_level = bmi.bmicalculator(weight,height);
-//
-//        if (bmi_level >=20 && bmi_level <25) {
-//            return "Standard.";
-//        } else {
-//            return "Need to take care.";
-//        }
-        return String.valueOf(bmi.bmicalculator(weight,height));
+        double bmi_level = 0.0;
+        bmi_level = bmi.bmicalculator(weight,height);
+
+        if (bmi_level >= 20.0 && bmi_level < 25.0) {
+            return "Standard.";
+        } else {
+            return "Need to Take Care";
+        }
 
     }
 }
