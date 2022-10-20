@@ -1,4 +1,5 @@
 pipeline {
+<<<<<<< Updated upstream
     agent any
     stages {
         stage("Compile") {
@@ -32,5 +33,22 @@ pipeline {
                 ])
             }
         }
+=======
+  agent any
+  stages {
+    stage('Compile') {
+      agent any
+      steps {
+        sh ' ./gradlew clean '
+      }
+>>>>>>> Stashed changes
     }
+
+    stage('Test') {
+      steps {
+        sh './gradlew test'
+      }
+    }
+
+  }
 }
