@@ -37,10 +37,8 @@ jacocoTestCoverageVerification {
 
 //checkstyle {
 //	toolVersion = '7.6.1'
-<<<<<<< Updated upstream
-=======
+
 //	configFile = new File(rootDir, 'build/reports/checkstyle/')
 //	System.setProperty('checkstyle.cache.file', String.format('%s/%s',
 //			buildDir, 'checkstyle.cachefile'))
->>>>>>> Stashed changes
 //}
